@@ -7,6 +7,7 @@ async function run() {
         let version = args['v'] || args['version'];
         if (!packageName) {
             console.error('Missing package name field. Please use -p | --packageName <package name>');
+            return;
         }
     
         let graph = await new GraphGenerator(packageName, version).generateGraph();
